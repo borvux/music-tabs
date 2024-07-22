@@ -3,6 +3,9 @@ class TabsController < ApplicationController
 
   # GET /tabs or /tabs.json
   def index
+    # if !current_user
+    #   redirect_to new_user_session_path
+    # end
     @tabs = Tab.all
   end
 
