@@ -3,10 +3,11 @@ class TabsController < ApplicationController
 
   # GET /tabs or /tabs.json
   def index
-    # if !current_user
-    #   redirect_to new_user_session_path
-    # end
-    @tabs = Tab.all
+    if !user_signed_in?
+      redirect_to new_user_session_path
+    else
+      @tabs = Tab.all
+    end
   end
 
   # GET /tabs/1 or /tabs/1.json
