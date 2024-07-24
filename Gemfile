@@ -17,7 +17,7 @@ gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 # gem "sassc-rails"
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 # AppDev Gems
 # ===========
