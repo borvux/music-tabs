@@ -303,7 +303,7 @@ task({ :sample_data => :environment }) do
 
   # create 4 more random users 
   4.times do
-    name = Faker::Name.first_name
+    name = Faker::Name.first_name.downcase
     User.create(
       email: "#{name}@example.com",
       password: "password",
