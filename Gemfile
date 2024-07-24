@@ -17,7 +17,11 @@ gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 # gem "sassc-rails"
-# gem "image_processing", "~> 1.2"
+gem "image_processing" #, "~> 1.2"
+
+# brew install vips
+# gem install ruby-vips
+# gem 'ruby-vips', '~> 2.2', '>= 2.2.2'
 
 # AppDev Gems
 # ===========

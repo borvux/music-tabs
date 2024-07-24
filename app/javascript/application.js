@@ -9,3 +9,7 @@ window.jQuery = jquery;
 window.$ = jquery;
 import Rails from "@rails/ujs"
 Rails.start();
+
+// required for rails action text trix editor 
+import "trix"
+import "@rails/actiontext"
