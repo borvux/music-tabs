@@ -441,7 +441,7 @@ DEPENDENCIES
   grade_runner
   htmlbeautifier
   http
-  image_processing (~> 1.2)
+  image_processing
   importmap-rails
   jbuilder
   pg (~> 1.1)

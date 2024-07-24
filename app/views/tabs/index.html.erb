@@ -5,7 +5,7 @@
 <hr>
 
 <div id="tabs">
-  <% @tabs.each do |tab| %>
+  <% current_user.tabs.each do |tab| %>
     <%#= render tab %>
     <p>
       <strong>Title:</strong>
