@@ -1,37 +1,35 @@
-<div class="container-md d-flex justify-content-center align-items-center">
-  <div class="row-md">
-    <div class="col-md">
+<div class="container justify-content-center">
+  <div class="row justify-content-center">
+    <div class="col-lg-4">
       <div class="card m-3">
         <div class="card-body">
-          <div class="container d-flex flex-column align-items-center justify-content-center">
-            <h2>Log in</h2>
+          <div class="h2 text-center">Log in</div>
 
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div class="">
-                <%= f.label :email, class: "form-label" %><br />
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-              </div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.label :email, class: "form-label" %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
 
-              <div class="">
-                <%= f.label :password, class: "form-label" %><br />
-                <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-              </div>
+            <div class="field">
+              <%= f.label :password, class: "form-label" %><br />
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+            </div>
 
-              <% if devise_mapping.rememberable? %>
-                <div class=" p-2 d-flex align-items-center justify-content-center">
-                  <%= f.check_box :remember_me, class: "p-2 form-check-input" %>
-                  <%= f.label :remember_me, class: "p-1" %>
-                </div>
-              <% end %>
-
-              <div class="actions d-flex align-items-center justify-content-center">
-                <%= f.submit "Log in", class: "btn btn-primary"%>
+            <% if devise_mapping.rememberable? %>
+              <div class=" p-2 d-flex align-items-center justify-content-center">
+                <%= f.check_box :remember_me, class: "p-2 form-check-input" %>
+                <%= f.label :remember_me, class: "p-1" %>
               </div>
             <% end %>
 
-            <div class="d-flex flex-column align-items-center justify-content-center mt-4">
-              <%= render "devise/shared/links" %>
+            <div class="actions d-flex align-items-center justify-content-center">
+              <%= f.submit "Log in", class: "btn btn-primary"%>
             </div>
+          <% end %>
+
+          <div class="text-center m-2">
+            <%= render "devise/shared/links" %>
           </div>
         </div>
       </div>
