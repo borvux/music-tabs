@@ -5,7 +5,9 @@
         <div class="container">
           <div class="row d-flex align-items-center justify-content-start">
             <div class="col-4">
-              <%= link_to "Back to tabs", tabs_path %>
+              <%= link_to tabs_path do %>
+                <i class="fa-solid fa-chevron-left"></i>
+              <% end %>
             </div>
 
             <div class="col-4 text-center">
