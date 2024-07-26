@@ -1,9 +1,25 @@
-<h1>New tab</h1>
+<div class="row m-3 justify-content-center">
+  <div class="col-9">
+    <div class="card">
+      <div class="card-header">
+        <div class="container">
+          <div class="row d-flex align-items-center justify-content-start">
+            <div class="col-4">
+              <%= link_to "Back to tabs", tabs_path %>
+            </div>
 
-<%= render "form", tab: @tab %>
+            <div class="col-4 text-center">
+              <div class="h3">Create a tab</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<br>
-
-<div>
-  <%= link_to "Back to tabs", tabs_path %>
+      <div class="card-body">
+        <div>
+          <%= render "form", tab: @tab %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
