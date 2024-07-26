@@ -1,10 +1,46 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @tab %>
-
+<%#= render @tab %>
+<!--
 <div>
-  <%= link_to "Edit this tab", edit_tab_path(@tab) %> |
-  <%= link_to "Back to tabs", tabs_path %>
+  <%#= link_to "Edit this tab", edit_tab_path(@tab) %> |-->
+<%#= link_to "Back to tabs", tabs_path %>
+<!---->
+<%#= button_to "Destroy this tab", @tab, method: :delete %>
+<!--</div>-->
 
-  <%= button_to "Destroy this tab", @tab, method: :delete %>
+<div class="row justify-content-center">
+  <div class="col-9">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <div class="col-3">
+          <%= link_to tabs_path do %>
+            <i class="fa-solid fa-chevron-left"></i>
+          <% end %>
+        </div>
+
+        <div class="col-3 h5 text-center">
+          <%= @tab.title %>
+        </div>
+
+        <div class="col-3 d-flex justify-content-end">
+          <div>
+            <%= link_to edit_tab_path(@tab) do %>
+              <i class="fa-solid fa-pen-to-square"></i>
+            <% end %>
+          </div>
+
+          <div>
+            <%= link_to @tab, method: :delete do %>
+              <i class="fa-solid fa-trash text-danger ms-2"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-body container-fluid">
+        <%= @tab.content %>
+      </div>
+    </div>
+  </div>
 </div>
