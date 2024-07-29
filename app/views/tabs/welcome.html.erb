@@ -2,13 +2,17 @@
   <div class="col text-center">
     <div class="h1">Simplify Your Song Tabs Management</div>
     <div>Music Tab is here to revolutionize the way you manage your song tabs</div>
-    <div>
-      <%= link_to "Get Started", new_user_registration_path, class: "btn btn-info m-5", aria: { label: "Get Started" } %>
-    </div>
+    <% if !user_signed_in? %>
+      <div>
+        <%= link_to "Get Started", new_user_registration_path, class: "btn btn-info m-5 px-5 py-3", aria: { label: "Get Started" } %>
+      </div>
 
-    <div>
-      <%= link_to "Sign-in", new_user_session_path, class: "btn btn-sm btn-outline-info", aria: { current: "page" } %>
-    </div>
+      <div>
+        <%= link_to "Sign-in", new_user_session_path, class: "btn btn-sm btn-outline-info", aria: { current: "page" } %>
+      </div>
+    <% else %>
+      <img src="<%= asset_path 'music_notes.png' %>" alt="Notes Tabs" class="small-image">
+    <% end %>
   </div>
 </div>
 
@@ -38,21 +42,22 @@
 
 <hr>
 
+<div class="h4 text-center m-4">How to use Music Tab</div>
 <div class="container d-flex justify-content-center">
   <div class="row text-center">
     <div class="col-8 d-flex align-items-center">
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="list-index" role="tabpanel" aria-labelledby="list-index-list">The list view shows all tabs with titles. Users can click on a tab to view or edit it. A plus (+) button allows adding new tabs.<br>
-          <img src="<%= asset_path 'index.jpeg' %>" alt="All Tabs" class="small-image">
+          <img src="<%= asset_path 'index.jpeg' %>" alt="All Tabs" class="big-image">
         </div>
         <div class="tab-pane fade" id="list-create" role="tabpanel" aria-labelledby="list-create-list">Users can create a new tab by entering a title and content. The content field supports rich text formatting and file attachments. Click "Submit" to save.
-          <img src="<%= asset_path 'create.jpeg' %>" alt="Create Tabs" class="small-image">
+          <img src="<%= asset_path 'create.jpeg' %>" alt="Create Tabs" class="big-image">
         </div>
         <div class="tab-pane fade" id="list-show" role="tabpanel" aria-labelledby="list-show-list">Users can view the full content of a created tab. The tab displays all the formatted details entered during creation or editing, allowing for easy reference during practice or performance.
-          <img src="<%= asset_path 'show.jpeg' %>" alt="View Tabs" class="small-image">
+          <img src="<%= asset_path 'show.jpeg' %>" alt="View Tabs" class="big-image">
         </div>
         <div class="tab-pane fade" id="list-edit" role="tabpanel" aria-labelledby="list-edit-list">Users can edit the title and content of an existing tab with rich text options. Save changes after editing.
-          <img src="<%= asset_path 'edit.jpeg' %>" alt="Edit Tabs" class="small-image">
+          <img src="<%= asset_path 'edit.jpeg' %>" alt="Edit Tabs" class="big-image">
         </div>
       </div>
     </div>
