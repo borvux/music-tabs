@@ -4,15 +4,12 @@ class TabsController < ApplicationController
   before_action :set_tab, only: %i[ show edit update destroy ]
 
   def welcome
-    if user_signed_in?
-      redirect_to root_path
-    end
   end
 
   # GET /tabs or /tabs.json
   def index
     if !user_signed_in?
-      redirect_to welcome_tabs_path
+      redirect_to root_path
     else
       @tabs = Tab.all
     end

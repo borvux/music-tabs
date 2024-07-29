@@ -1,3 +1,8 @@
-body {
+.grey-bg {
   background-color: #F0F3F4;
+}
+
+.small-image {
+  width: 400px; 
+  height: auto;
 }
