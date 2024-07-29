@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   # get "/your_first_screen" => "pages#first"
 
-  root "tabs#welcome"
+  root "tabs#index"
 end
