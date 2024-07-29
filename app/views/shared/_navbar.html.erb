@@ -1,44 +1,42 @@
-<!--<header class="p-3 border-bottom sticky-top bg-white">
-  <div class="row flex-nowrap justify-content-end align-items-center">
-    <div class="<%#= user_signed_in? ? 'col-4' : 'col' %> pt-1 text-center">
-      <%#= link_to root_path, class: "fs-2 text-decoration-none text-dark" do %>-->
-<!--        <i class="fa-solid fa-music fs-1 text-primary-emphasis"></i>
-        Music Tabs
-      <%# end %>-->
-<!--    </div>
-
-    <%# if user_signed_in? %>-->
-<!--      <div class="col-4 d-flex justify-content-end align-items-center">-->
-        <%#= link_to edit_user_registration_path, class: "btn btn-sm btn-outline-success mx-2", aria: { label: "Edit Profile" } do %>
-<!--          <i class="bi bi-gear-fill" fill="currentColor"></i>-->
-        <%# end %>
-        <%#= link_to "Logout", destroy_user_session_path, class: "btn btn-sm btn-outline-danger", method: :delete, aria: { label: "Logout" } %>
-<!--      </div>-->
-    <%# end %>
-<!--  </div>
-</header>
--->
-<header class="p-3 border-bottom sticky-top bg-white">
-  <div class="row flex-nowrap justify-content-end align-items-center">
-    <div class="col-4 pt-1 text-center">
-      <%= link_to root_path, class: "fs-2 text-decoration-none text-dark" do %>
-        <i class="fa-solid fa-music fs-1 text-primary-emphasis"></i>
-        Music Tabs
-      <% end %>
-    </div>
-
-    <% if user_signed_in? %>
-      <div class="col-4 d-flex justify-content-end align-items-center">
-        <%= link_to edit_user_registration_path, class: "btn btn-sm btn-outline-success mx-2", aria: { label: "Edit Profile" } do %>
-          <i class="bi bi-gear-fill" fill="currentColor"></i>
-        <% end %>
-        <%= link_to "Logout", destroy_user_session_path, class: "btn btn-sm btn-outline-danger", method: :delete, aria: { label: "Logout" } %>
-      </div>
-    <% else %>
-      <div class="col-4 d-flex justify-content-end align-items-center">
-        <%= link_to "Sign-in", new_user_session_path, class: "btn btn-sm btn-outline-info mx-2", aria: { label: "Sign-in" } %>
-        <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-sm btn-outline-success", aria: { label: "Sign-up" } %>
-      </div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "fs-2 text-decoration-none text-dark" do %>
+      <i class="fa-solid fa-music fs-1 text-primary-emphasis"></i>
+      Music Tabs
     <% end %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Home", root_path, class: "nav-link", aria: { current: "page" } %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Tabs", tabs_path, class: "nav-link", aria: { current: "page" } %>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to edit_user_registration_path, class: "btn btn-sm btn-outline-success", aria: { current: "page" } do %>
+              <i class="bi bi-gear-fill" fill="currentColor"></i>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, class: "btn btn-sm btn-outline-danger", method: :delete, aria: { current: "page" } %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign-in", new_user_session_path, class: "btn btn-sm btn-outline-info", aria: { current: "page" } %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-sm btn-outline-success", aria: { current: "page" } %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-</header>
+</nav>
