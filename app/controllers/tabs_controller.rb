@@ -1,10 +1,15 @@
 class TabsController < ApplicationController
+  # don't need to autheticate_user for the welcome page 
+  before_action :authenticate_user!, except: [:welcome]
   before_action :set_tab, only: %i[ show edit update destroy ]
+
+  def welcome
+  end
 
   # GET /tabs or /tabs.json
   def index
     if !user_signed_in?
-      redirect_to new_user_session_path
+      redirect_to root_path
     else
       @tabs = Tab.all
     end
