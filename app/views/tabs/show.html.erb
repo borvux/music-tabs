@@ -1,14 +1,5 @@
 <p style="color: green"><%= notice %></p>
 
-<%#= render @tab %>
-<!--
-<div>
-  <%#= link_to "Edit this tab", edit_tab_path(@tab) %> |-->
-<%#= link_to "Back to tabs", tabs_path %>
-<!---->
-<%#= button_to "Destroy this tab", @tab, method: :delete %>
-<!--</div>-->
-
 <div class="row justify-content-center">
   <div class="col-9">
     <div class="card">
@@ -37,7 +28,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="card-body container-fluid">
         <%= @tab.content %>
       </div>
