@@ -35,3 +35,62 @@
     </div>
   </div>
 </div>
+
+<footer class="fixed-bottom bg-light">
+  <div class="container-fluid">
+    <div class="row justify-content-center my-3">
+      <div class="col-auto">
+        <button id="auto-scroll-btn" class="btn btn-outline-dark">Auto Scroll</button>
+        <button id="increase-speed-btn" class="btn btn-outline-dark mx-2">+</button>
+        <button id="decrease-speed-btn" class="btn btn-outline-dark">-</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!--<script>
+  document.getElementById('auto-scroll-btn').addEventListener('click', function() {
+    let scrollInterval = setInterval(function() {
+      // Scroll by a small amount each time
+      window.scrollBy(0, 2);
+
+      // Stop scrolling when the bottom is reached
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        clearInterval(scrollInterval);
+      }
+    }, 10); // Adjust the interval speed here (e.g., 10ms)
+  });
+</script>-->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let scrollInterval;
+    let scrollSpeed = 10; // Initial speed, lower is faster
+
+    document.getElementById('auto-scroll-btn').addEventListener('click', function() {
+      if (scrollInterval) {
+        clearInterval(scrollInterval);
+      }
+
+      scrollInterval = setInterval(function() {
+        // Scroll by a small amount each time
+        window.scrollBy(0, 2);
+
+        // Stop scrolling when the bottom is reached
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+          clearInterval(scrollInterval);
+        }
+      }, scrollSpeed);
+    });
+
+    document.getElementById('increase-speed-btn').addEventListener('click', function() {
+      if (scrollSpeed > 1) {
+        scrollSpeed -= 1; // Decrease interval time to increase speed
+      }
+    });
+
+    document.getElementById('decrease-speed-btn').addEventListener('click', function() {
+      scrollSpeed += 1; // Increase interval time to decrease speed
+    });
+  });
+</script>
