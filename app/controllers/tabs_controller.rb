@@ -1,6 +1,6 @@
 class TabsController < ApplicationController
   # don't need to autheticate_user for the welcome page 
-  before_action :authenticate_user!, except: [:welcome, :index]
+  before_action :authenticate_user!, except: [:welcome]
   before_action :set_tab, only: %i[ show edit update destroy ]
 
   def welcome
