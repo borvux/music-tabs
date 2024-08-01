@@ -15,4 +15,7 @@ class Tab < ApplicationRecord
 
   # needed to change it to a trix text editor 
   has_rich_text :content
+
+  # scope to find tabs created by certain users 
+  scope :by_user, ->(user) { where(user: user) }
 end

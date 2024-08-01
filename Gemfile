@@ -18,10 +18,12 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 # gem "sassc-rails"
 gem "image_processing" #, "~> 1.2"
+gem "pundit"
 
 # brew install vips
 # gem install ruby-vips
 # gem 'ruby-vips', '~> 2.2', '>= 2.2.2'
+# rails g pundit:install
 
 # AppDev Gems
 # ===========
