@@ -1,18 +1,15 @@
 class TabsController < ApplicationController
-  # don't need to autheticate_user for the welcome page 
+  # don't need to autheticate_user for the welcome page
   before_action :authenticate_user!, except: [:welcome]
   before_action :set_tab, only: %i[ show edit update destroy ]
+  before_action { authorize(@tab || Tab) }
 
   def welcome
   end
 
   # GET /tabs or /tabs.json
   def index
-    if !user_signed_in?
-      redirect_to root_path
-    else
-      @tabs = Tab.all
-    end
+    @tabs = policy_scope(Tab).by_user(current_user)
   end
 
   # GET /tabs/1 or /tabs/1.json
@@ -67,13 +64,14 @@ class TabsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_tab
-      @tab = Tab.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def tab_params
-      params.require(:tab).permit(:title, :content, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_tab
+    @tab = policy_scope(Tab).find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def tab_params
+    params.require(:tab).permit(:title, :content, :user_id)
+  end
 end
