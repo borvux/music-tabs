@@ -16,6 +16,6 @@ module Punditable
   end
 
   def skip_policy_scope_verification?
-    devise_controller? || self.class == TabsController || action_name != 'index'
+    devise_controller? || (self.class == TabsController && action_name != 'index')
   end
 end
