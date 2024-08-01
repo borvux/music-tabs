@@ -2,7 +2,7 @@ class CreateTabs < ActiveRecord::Migration[7.1]
   def change
     create_table :tabs do |t|
       t.string :title
-      t.string :body
+      t.text :content
       t.integer :user_id
 
       t.timestamps
