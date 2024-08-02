@@ -9,20 +9,36 @@ class TabsController < ApplicationController
 
   # GET /tabs or /tabs.json
   def index
+    @breadcrumbs = [
+      {content: "Tabs", href: tabs_path},
+    ]
     @tabs = policy_scope(Tab).by_user(current_user)
   end
 
   # GET /tabs/1 or /tabs/1.json
   def show
+    @breadcrumbs = [
+      {content: "Tabs", href: tabs_path},
+      {content: @tab.to_s, href: tab_path(@tab)}
+    ]
   end
 
   # GET /tabs/new
   def new
+    @breadcrumbs = [
+      {content: "Tabs", href: tabs_path},
+      {content: "New"}
+    ]
     @tab = Tab.new
   end
 
   # GET /tabs/1/edit
   def edit
+    @breadcrumbs = [
+      {content: "Tabs", href: tabs_path},
+      {content: @tab.to_s, href: tab_path(@tab)},
+      {content: "Edit"}
+    ]
   end
 
   # POST /tabs or /tabs.json

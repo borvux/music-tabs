@@ -18,4 +18,8 @@ class Tab < ApplicationRecord
 
   # scope to find tabs created by certain users 
   scope :by_user, ->(user) { where(user: user) }
+
+  def to_s
+    "#{title.capitalize}"
+  end
 end
