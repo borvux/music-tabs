@@ -310,9 +310,9 @@ task({ :sample_data => :environment }) do
     )
   end
 
-  30.times do
+  100.times do
     Tab.create(
-      title: Faker::FunnyName.name,
+      title: Faker::Music::GratefulDead.song,
       user_id: User.pluck(:id).sample,
       # using sample_format to get the newline and breaks 
       content: simple_format(sample_tabs.sample),

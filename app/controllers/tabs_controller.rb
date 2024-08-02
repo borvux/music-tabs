@@ -11,8 +11,9 @@ class TabsController < ApplicationController
   def index
     @breadcrumbs = [
       {content: "Tabs", href: tabs_path},
+      {content: "Page #{params[:page] || 1}"}
     ]
-    @tabs = policy_scope(Tab).by_user(current_user)
+    @tabs = policy_scope(Tab).by_user(current_user).page(params[:page]).per(10)
   end
 
   # GET /tabs/1 or /tabs/1.json
