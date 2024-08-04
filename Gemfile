@@ -19,6 +19,7 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 gem "image_processing" #, "~> 1.2"
 gem "pundit"
+gem "kaminari", "~> 1.2"
 
 # brew install vips
 # gem install ruby-vips

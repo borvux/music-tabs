@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-12">
+    <% if notice.present? %>
+      <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+        <div id="noticeToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body">
+              <%= notice %>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+        <div id="alertToast" class="toast align-items-center text-bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body">
+              <%= alert %>
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    <% if notice.present? %>
+      var noticeToast = new bootstrap.Toast(document.getElementById('noticeToast'))
+      noticeToast.show()
+    <% end %>
+
+    <% if alert.present? %>
+      var alertToast = new bootstrap.Toast(document.getElementById('alertToast'))
+      alertToast.show()
+    <% end %>
+  });
+</script>
