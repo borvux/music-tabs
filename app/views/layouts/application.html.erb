@@ -15,10 +15,12 @@
   <body class="grey-bg">
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    
+
     <div class="container-fluid my-2">
-      <%= render "shared/breadcrumbs" %>
-      <%= yield %> 
+      <div id="breadcrumbs">
+        <%= render "shared/breadcrumbs" %>
+      </div>
+      <%= yield %>
     </div>
   </body>
 </html>
