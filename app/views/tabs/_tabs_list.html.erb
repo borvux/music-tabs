@@ -1,0 +1,10 @@
+<% tabs.each do |tab| %>
+  <%= link_to tab, class: "list-group-item list-group-item-action d-flex justify-content-between align-items-center" do %>
+    <div>
+      <h6><%= tab.title %></h6>
+    </div>
+    <div>
+      <i class="fa-solid fa-chevron-right mx-2 text-primary"></i>
+    </div>
+  <% end %>
+<% end %>

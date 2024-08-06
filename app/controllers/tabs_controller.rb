@@ -14,6 +14,11 @@ class TabsController < ApplicationController
       {content: "Page #{params[:page] || 1}"}
     ]
     @tabs = policy_scope(Tab).by_user(current_user).page(params[:page]).per(10)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /tabs/1 or /tabs/1.json

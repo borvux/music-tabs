@@ -1,0 +1,2 @@
+$('#tabs').html('<%= j render 'tabs_list', tabs: @tabs %>');
+$('.pagination').html('<%= j paginate @tabs, remote: true %>');
