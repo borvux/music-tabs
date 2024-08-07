@@ -36,11 +36,6 @@ class TabsController < ApplicationController
       {content: "New"}
     ]
     @tab = Tab.new
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   # GET /tabs/1/edit
@@ -50,11 +45,6 @@ class TabsController < ApplicationController
       {content: @tab.to_s, href: tab_path(@tab)},
       {content: "Edit"}
     ]
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   # POST /tabs or /tabs.json
@@ -79,6 +69,7 @@ class TabsController < ApplicationController
       if @tab.update(tab_params)
         format.html { redirect_to tab_url(@tab), notice: "Tab was successfully updated." }
         format.json { render :show, status: :ok, location: @tab }
+        format.js
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @tab.errors, status: :unprocessable_entity }
