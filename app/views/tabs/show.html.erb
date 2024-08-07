@@ -14,7 +14,7 @@
 
         <div class="col-3 d-flex justify-content-end">
           <div>
-            <%= link_to edit_tab_path(@tab) do %>
+            <%= link_to edit_tab_path(@tab), remote: true do %>
               <i class="fa-solid fa-pen-to-square"></i>
             <% end %>
           </div>
@@ -52,66 +52,4 @@
   </div>
 </footer>
 
-<script>
-  let scrollInterval;
-  let scrollSpeed = 1; // Initial speed level
-
-  // Function to start auto-scrolling
-  function startAutoScroll() {
-    const speedMapping = {
-      1: 200,
-      2: 100,
-      3: 50,
-      4: 1,
-      5: 1
-    };
-    const scrollAmount = scrollSpeed === 5 ? 2 : 1;
-    scrollInterval = setInterval(() => {
-      window.scrollBy(0, scrollAmount);
-    }, speedMapping[scrollSpeed]);
-
-    // Change button text and icon to indicate pause action
-    document.getElementById('auto-scroll-btn').innerHTML = 'Pause Scroll<i class="fa-solid fa-pause ms-2"></i>';
-  }
-
-  // Function to stop auto-scrolling
-  function stopAutoScroll() {
-    clearInterval(scrollInterval);
-    scrollInterval = null;
-
-    // Change button text and icon to indicate start action
-    document.getElementById('auto-scroll-btn').innerHTML = 'Auto Scroll<i class="fa-solid fa-play ms-2"></i>';
-  }
-
-  // Toggle auto-scrolling
-  document.getElementById('auto-scroll-btn').addEventListener('click', () => {
-    if (scrollInterval) {
-      stopAutoScroll();
-    } else {
-      startAutoScroll();
-    }
-  });
-
-  // Change speed without starting auto-scroll if it's not already running
-  document.getElementById('increase-speed-btn').addEventListener('click', () => {
-    if (scrollSpeed < 5) {
-      scrollSpeed++;
-      document.getElementById('scroll-speed-display').textContent = `Scroll Speed: ${scrollSpeed}`;
-      if (scrollInterval) {
-        clearInterval(scrollInterval);
-        startAutoScroll(); // Restart auto-scroll with new speed if it was running
-      }
-    }
-  });
-
-  document.getElementById('decrease-speed-btn').addEventListener('click', () => {
-    if (scrollSpeed > 1) {
-      scrollSpeed--;
-      document.getElementById('scroll-speed-display').textContent = `Scroll Speed: ${scrollSpeed}`;
-      if (scrollInterval) {
-        clearInterval(scrollInterval);
-        startAutoScroll(); // Restart auto-scroll with new speed if it was running
-      }
-    }
-  });
-</script>
+<%= javascript_include_tag 'auto_scroll' %>
