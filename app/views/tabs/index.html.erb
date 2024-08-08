@@ -1,9 +1,10 @@
 <div class="row justify-content-center">
-  <div class="col-9">
+  <div class="col-9 mb-2">
     <%= search_form_for @q do |f| %>
-        <%= f.text_field :title_cont, :placeholder => "Search tabs" %>
-        <%= f.submit :class => "btn btn-primary btn-block" %>
-        <%= link_to 'Clear Filters', tabs_path %>
+      <div class="input-group">
+        <%= f.text_field :title_cont, placeholder: "Search tabs", class: "form-control" %>
+        <%= f.submit class: "btn btn-outline-info btn-block mx-1" %>
+        <%= link_to 'Clear', tabs_path, class: "btn btn-outline-secondary btn-block" %>
       </div>
     <% end %>
   </div>
