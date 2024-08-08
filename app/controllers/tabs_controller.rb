@@ -36,11 +36,6 @@ class TabsController < ApplicationController
       { content: "New" },
     ]
     @tab = Tab.new
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   # GET /tabs/1/edit
@@ -53,7 +48,7 @@ class TabsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.js
+      format.js { render 'update' }
     end
   end
 
