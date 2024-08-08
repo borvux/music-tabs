@@ -1,0 +1,4 @@
+// update the pagination and breadcrumbs
+$('#tabs').html('<%= j render 'tabs_list', tabs: @tabs %>');
+$('.pagination').html('<%= j paginate @tabs, remote: true %>');
+$('#breadcrumbs').html('<%= j render 'shared/breadcrumbs' %>');

@@ -9,17 +9,7 @@
       </div>
       <ul class="list-group list-group-flush">
         <div id="tabs">
-          <% @tabs.each do |tab| %>
-            <%= link_to tab, class: "list-group-item list-group-item-action d-flex justify-content-between align-items-center" do%>
-              <div>
-                <h6><%= tab.title %></h6>
-              </div>
-
-              <div>
-                <i class="fa-solid fa-chevron-right mx-2 text-primary"></i>
-              </div>
-            <% end %>
-          <% end %>
+          <%= render 'tabs_list', tabs: @tabs %>
         </div>
       </ul>
     </div>
@@ -27,5 +17,5 @@
 </div>
 
 <div class="d-flex justify-content-center mt-2">
-  <%= paginate @tabs %>
+  <%= paginate @tabs, remote: true %>
 </div>

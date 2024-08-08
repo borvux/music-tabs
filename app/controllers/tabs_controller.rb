@@ -10,25 +10,30 @@ class TabsController < ApplicationController
   # GET /tabs or /tabs.json
   def index
     @breadcrumbs = [
-      {content: "Tabs", href: tabs_path},
-      {content: "Page #{params[:page] || 1}"}
+      { content: "Tabs", href: tabs_path },
+      { content: "Page #{params[:page] || 1}" },
     ]
     @tabs = policy_scope(Tab).by_user(current_user).page(params[:page]).per(10)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /tabs/1 or /tabs/1.json
   def show
     @breadcrumbs = [
-      {content: "Tabs", href: tabs_path},
-      {content: @tab.to_s, href: tab_path(@tab)}
+      { content: "Tabs", href: tabs_path },
+      { content: @tab.to_s, href: tab_path(@tab) },
     ]
   end
 
   # GET /tabs/new
   def new
     @breadcrumbs = [
-      {content: "Tabs", href: tabs_path},
-      {content: "New"}
+      { content: "Tabs", href: tabs_path },
+      { content: "New" },
     ]
     @tab = Tab.new
   end
@@ -36,10 +41,15 @@ class TabsController < ApplicationController
   # GET /tabs/1/edit
   def edit
     @breadcrumbs = [
-      {content: "Tabs", href: tabs_path},
-      {content: @tab.to_s, href: tab_path(@tab)},
-      {content: "Edit"}
+      { content: "Tabs", href: tabs_path },
+      { content: @tab.to_s, href: tab_path(@tab) },
+      { content: "Edit" },
     ]
+
+    respond_to do |format|
+      format.html
+      format.js { render 'update' }
+    end
   end
 
   # POST /tabs or /tabs.json
@@ -48,8 +58,13 @@ class TabsController < ApplicationController
 
     respond_to do |format|
       if @tab.save
+        @breadcrumbs = [
+          { content: "Tabs", href: tabs_path },
+          { content: @tab.to_s, href: tab_path(@tab) },
+        ]
         format.html { redirect_to tab_url(@tab), notice: "Tab was successfully created." }
         format.json { render :show, status: :created, location: @tab }
+        format.js
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @tab.errors, status: :unprocessable_entity }
@@ -63,6 +78,7 @@ class TabsController < ApplicationController
       if @tab.update(tab_params)
         format.html { redirect_to tab_url(@tab), notice: "Tab was successfully updated." }
         format.json { render :show, status: :ok, location: @tab }
+        format.js
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @tab.errors, status: :unprocessable_entity }
