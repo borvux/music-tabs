@@ -39,7 +39,7 @@ class TabsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.js { render "create" }
+      format.js
     end
   end
 
@@ -53,7 +53,7 @@ class TabsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.js { render "update" }
+      format.js
     end
   end
 
