@@ -1,10 +1,10 @@
 <div class="row justify-content-center">
   <div class="col-9 mb-3">
-    <%= search_form_for @q do |f| %>
+    <%= search_form_for @q, url: tabs_path, method: :get, remote: true, html: { id: 'search-form' } do |f| %>
       <div class="input-group">
-       <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-        <%= f.search_field :title_cont, placeholder: "Search tabs", class: "form-control" %>
-        <%= f.submit class: "btn btn-outline-info btn-block mx-1" %>
+        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <%= f.search_field :title_cont, placeholder: "Search tabs", class: "form-control", id: 'search-input', oninput: "submitForm();" %>
+        <%= f.submit class: "btn btn-outline-info btn-block mx-1 d-none" %>
       </div>
     <% end %>
   </div>
@@ -31,3 +31,23 @@
 <div class="d-flex justify-content-center mt-2">
   <%= paginate @tabs, remote: true %>
 </div>
+
+<script>
+  function submitForm() {
+    var searchInput = document.getElementById('search-input');
+    var cursorPosition = searchInput.selectionStart;
+
+    clearTimeout(window.searchTimeout);
+    window.searchTimeout = setTimeout(function() {
+      $.ajax({
+        url: $('#search-form').attr('action'),
+        data: $('#search-form').serialize(),
+        dataType: 'script',
+        success: function() {
+          searchInput.focus();
+          searchInput.setSelectionRange(cursorPosition, cursorPosition);
+        }
+      });
+    }, 300);
+  }
+</script>
