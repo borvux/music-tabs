@@ -1,10 +1,4 @@
-// Update the card header and body with the new content
-$("#card-header").html("<%= j render 'edit_card_header', tab: @tab %>");
-$("#card-body").html("<%= j render 'form', tab: @tab %>");
-
-// Remove the footer and JavaScript tag
-$("footer").remove();
-$("script[src='/assets/auto_scroll.js']").remove();
-
 //update the breadcrumbs too
 $('#breadcrumbs').html('<%= j render 'shared/breadcrumbs' %>');
+
+$('#show-content').html('<%= j render template: "tabs/edit" %>');

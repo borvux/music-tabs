@@ -2,7 +2,19 @@
   <div class="col-9">
     <div class="card">
       <div class="card-header d-flex justify-content-between align-items-center">
-        <%= render "edit_card_header", tab: @tab%>
+        <div class="container">
+          <div class="row d-flex align-items-center justify-content-start">
+            <div class="col-4">
+              <%= link_to @tab do %>
+                <i class="fa-solid fa-chevron-left"></i>
+              <% end %>
+            </div>
+
+            <div class="col-4 text-center">
+              <div class="h5">Edit</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="card-body">

@@ -1,55 +1,57 @@
-<div class="row justify-content-center">
-  <div class="col-9">
-    <div class="card">
-      <div id="card-header" class="card-header d-flex justify-content-between align-items-center">
-        <div class="col-3">
-          <%= link_to tabs_path do %>
-            <i class="fa-solid fa-chevron-left"></i>
-          <% end %>
-        </div>
-
-        <div class="col-3 h5 text-center">
-          <%= @tab.title %>
-        </div>
-
-        <div class="col-3 d-flex justify-content-end">
-          <div>
-            <%= link_to edit_tab_path(@tab), remote: true do %>
-              <i class="fa-solid fa-pen-to-square"></i>
+<div id="show-content">
+  <div class="row justify-content-center">
+    <div class="col-9">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div class="col-3">
+            <%= link_to tabs_path do %>
+              <i class="fa-solid fa-chevron-left"></i>
             <% end %>
           </div>
 
-          <div>
-            <%= link_to @tab, method: :delete do %>
-              <i class="fa-solid fa-trash text-danger ms-2"></i>
-            <% end %>
+          <div class="col-3 h5 text-center">
+            <%= @tab.title %>
+          </div>
+
+          <div class="col-3 d-flex justify-content-end">
+            <div>
+              <%= link_to edit_tab_path(@tab), remote: true do %>
+                <i class="fa-solid fa-pen-to-square"></i>
+              <% end %>
+            </div>
+
+            <div>
+              <%= link_to @tab, method: :delete do %>
+                <i class="fa-solid fa-trash text-danger ms-2"></i>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div id="card-body" class="card-body container-fluid">
-        <%= @tab.content %>
+        <div class="card-body container-fluid">
+          <%= @tab.content %>
+        </div>
       </div>
     </div>
   </div>
+
+  <footer class="fixed-bottom bg-light">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col text-center my-1">
+          <button id="auto-scroll-btn" class="btn btn-outline-dark-emphasis">
+            Auto Scroll<i class="fa-solid fa-play ms-2"></i>
+          </button>
+
+          <div class="btn-group">
+            <div id="decrease-speed-btn" class="btn btn-outline-dark-emphasis"><i class="fa-solid fa-minus"></i></div>
+            <div class="btn btn-outline-dark-emphasis" aria-current="page" id="scroll-speed-display">Scroll Speed: 1</div>
+            <div id="increase-speed-btn" class="btn btn-outline-dark-emphasis"><i class="fa-solid fa-plus"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <%= javascript_include_tag 'auto_scroll' %>
 </div>
-
-<footer class="fixed-bottom bg-light">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col text-center my-1">
-        <button id="auto-scroll-btn" class="btn btn-outline-dark-emphasis">
-          Auto Scroll<i class="fa-solid fa-play ms-2"></i>
-        </button>
-
-        <div class="btn-group">
-          <div id="decrease-speed-btn" class="btn btn-outline-dark-emphasis"><i class="fa-solid fa-minus"></i></div>
-          <div class="btn btn-outline-dark-emphasis" aria-current="page" id="scroll-speed-display">Scroll Speed: 1</div>
-          <div id="increase-speed-btn" class="btn btn-outline-dark-emphasis"><i class="fa-solid fa-plus"></i></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<%= javascript_include_tag 'auto_scroll' %>
