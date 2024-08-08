@@ -1,4 +1,16 @@
 <div class="row justify-content-center">
+  <div class="col-9 mb-3">
+    <%= search_form_for @q, url: tabs_path, method: :get, remote: true, html: { id: 'search-form' } do |f| %>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <%= f.search_field :title_cont, placeholder: "Search tabs", class: "form-control", id: 'search-input', oninput: "submitForm();" %>
+        <%= f.submit class: "d-none" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row justify-content-center">
   <div class="col-9">
     <div class="card">
       <div class="card-header d-flex justify-content-between align-items-center">
@@ -19,3 +31,5 @@
 <div class="d-flex justify-content-center mt-2">
   <%= paginate @tabs, remote: true %>
 </div>
+
+<%= javascript_include_tag 'smooth_search' %>

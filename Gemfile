@@ -20,6 +20,7 @@ gem "bootsnap", require: false
 gem "image_processing" #, "~> 1.2"
 gem "pundit"
 gem "kaminari", "~> 1.2"
+gem 'ransack'
 
 # brew install vips
 # gem install ruby-vips

@@ -17,7 +17,7 @@ class TabPolicy < ApplicationPolicy
 
   def create?
     # anybody can create tabs 
-    true
+    index?
   end
 
   def new?

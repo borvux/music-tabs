@@ -9,11 +9,13 @@ class TabsController < ApplicationController
 
   # GET /tabs or /tabs.json
   def index
+    @q = policy_scope(Tab).by_user(current_user).page(params[:page]).per(10).ransack(params[:q])
+    @tabs = @q.result
+
     @breadcrumbs = [
       { content: "Tabs", href: tabs_path },
       { content: "Page #{params[:page] || 1}" },
     ]
-    @tabs = policy_scope(Tab).by_user(current_user).page(params[:page]).per(10)
 
     respond_to do |format|
       format.html
