@@ -50,7 +50,7 @@ class TabsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.js { render 'update' }
+      format.js
     end
   end
 
@@ -66,7 +66,7 @@ class TabsController < ApplicationController
         ]
         format.html { redirect_to tab_url(@tab), notice: "Tab was successfully created." }
         format.json { render :show, status: :created, location: @tab }
-        format.js
+        format.js 
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @tab.errors, status: :unprocessable_entity }
@@ -78,6 +78,10 @@ class TabsController < ApplicationController
   def update
     respond_to do |format|
       if @tab.update(tab_params)
+        @breadcrumbs = [
+          { content: "Tabs", href: tabs_path },
+          { content: @tab.to_s, href: tab_path(@tab) },
+        ]
         format.html { redirect_to tab_url(@tab), notice: "Tab was successfully updated." }
         format.json { render :show, status: :ok, location: @tab }
         format.js
