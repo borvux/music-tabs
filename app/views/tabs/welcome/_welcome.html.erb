@@ -1,0 +1,17 @@
+<div class="row m-5">
+  <div class="col text-center">
+    <div class="h1">Simplify Your Song Tabs Management</div>
+    <div>Music Tab is here to revolutionize the way you manage your song tabs</div>
+    <% if !user_signed_in? %>
+      <div>
+        <%= link_to "Get Started", new_user_registration_path, class: "btn btn-info m-5 px-5 py-3", aria: { label: "Get Started" } %>
+      </div>
+
+      <div>
+        <%= link_to "Sign-in", new_user_session_path, class: "btn btn-sm btn-outline-info", aria: { current: "page" } %>
+      </div>
+    <% else %>
+      <img src="<%= asset_path 'music_notes.png' %>" alt="Notes Tabs" class="small-image m-4">
+    <% end %>
+  </div>
+</div>
