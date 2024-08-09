@@ -28,6 +28,6 @@
   </div>
 <% end %>
 
-<%= render 'shared/form_modal' %>
+<%= render 'shared/form_modal', title: 'Confirm Submission', body: 'Are you sure?', no: 'Cancel', yes: 'Confirm' %>
 
 <%= javascript_include_tag 'modal' %>
