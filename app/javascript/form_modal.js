@@ -10,25 +10,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Store the form ID in the modal's confirm button
       const confirmButton = document.getElementById('confirm-button');
-      confirmButton.setAttribute('data-form-id', formId);
+      if (confirmButton) {
+        confirmButton.setAttribute('data-form-id', formId);
+      }
 
       // Show the modal
-      const confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+      const confirmationModal = new bootstrap.Modal(document.getElementById('updateConfirmationModal'));
       confirmationModal.show();
     });
   });
 
-  // Add event listener to the confirm button in the modal
+    // Add event listener to the confirm button in the modal
   document.getElementById('confirm-button').addEventListener('click', () => {
-    // Get the form ID from the confirm button's data attribute
+    // Get the form ID and path from the confirm button's data attributes
     const formId = document.getElementById('confirm-button').getAttribute('data-form-id');
-    const form = document.getElementById(formId);
 
     // Submit the form if it exists
-    if (form) {
-      form.submit();
+    if (formId) {
+      const form = document.getElementById(formId);
+      if (form) {
+        form.submit();
+      }
     } else {
-      console.error('Form not found:', formId);
+      console.error('Form ID or path not found');
     }
+  });
+
+  // Close modals on backdrop click
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('hidden.bs.modal', () => {
+      // Ensure the modal is fully hidden
+      modal.classList.remove('show');
+      document.body.classList.remove('modal-open');
+      document.querySelector('.modal-backdrop').remove();
+    });
   });
 });

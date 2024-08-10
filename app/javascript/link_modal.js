@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Select the modals
   var deleteModal = document.getElementById('confirmationModal');
   var logoutModal = document.getElementById('logoutConfirmationModal');
+  var cancelModal = document.getElementById('cancelConfirmationModal');
 
   if (logoutModal) {
     logoutModal.addEventListener('show.bs.modal', function (event) {
@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmLogoutButton.setAttribute('href', path);
       }
     });
-  } else if (deleteModal) {
+  }
+
+  if (deleteModal) {
     deleteModal.addEventListener('show.bs.modal', function (event) {
       var button = event.relatedTarget; // Button that triggered the modal
       var tabId = button.getAttribute('data-bs-tab-id');
@@ -23,6 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
       var confirmDeleteButton = deleteModal.querySelector('#confirm-action');
       if (confirmDeleteButton) {
         confirmDeleteButton.setAttribute('href', `/tabs/${tabId}`);
+      }
+    });
+  }
+
+  if (cancelModal) {
+    cancelModal.addEventListener('show.bs.modal', function (event) {
+      var button = event.relatedTarget; // Button that triggered the modal
+      var path = button.getAttribute('data-path');
+      
+      // Set the correct URL for the cancel action in the confirm button
+      var confirmCancelButton = cancelModal.querySelector('#confirm-action');
+      if (confirmCancelButton) {
+        confirmCancelButton.setAttribute('href', path);
       }
     });
   }
