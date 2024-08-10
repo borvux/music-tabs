@@ -31,6 +31,6 @@
   </div>
 </div>
 
-<%= render 'shared/modal', title: 'Confirm Delete', body: 'Are you sure you want to proceed?', yes: 'Delete', no: 'Cancel', no_btn: 'btn btn-info', yes_btn: 'btn btn-danger' %>
+<%= render 'shared/modal', title: 'Confirm Delete', body: 'Are you sure you want to proceed?', yes: 'Delete', no: 'Cancel', no_btn: 'btn btn-info', yes_btn: 'btn btn-danger', devise_action: false, modal_id: 'confirmationModal'%>
 
 <%= javascript_include_tag 'link_modal' %>

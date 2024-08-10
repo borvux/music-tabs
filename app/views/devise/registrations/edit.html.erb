@@ -61,6 +61,6 @@
   </div>
 </div>
 
-<%= render 'shared/modal', title: 'Confirm Changes', body: 'Are you sure?', no: 'Cancel', yes: 'Confirm', no_btn: 'btn btn-danger', yes_btn: 'btn btn-success' %>
+<%= render 'shared/modal', title: 'Confirm Changes', body: 'Are you sure?', no: 'Cancel', yes: 'Confirm', no_btn: 'btn btn-danger', yes_btn: 'btn btn-success', devise_action: false, modal_id: 'confirmationModal' %>
 
 <%= javascript_include_tag 'form_modal' %>

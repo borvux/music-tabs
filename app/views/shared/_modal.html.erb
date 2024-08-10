@@ -1,4 +1,7 @@
-<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+<% modal_id = defined?(modal_id) ? modal_id : 'confirmationModal' %>
+<% devise_action = defined?(devise_action) ? devise_action : false %>
+
+<div class="modal fade" id="<%= modal_id %>" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -10,12 +13,11 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="<%= no_btn %>" data-bs-dismiss="modal"><%= no %></button>
-        <% if params[:action] == 'show' %>
-          <%= link_to yes, "#", id: "confirm-delete", class: yes_btn, method: :delete %>
+        <% if devise_action || params[:action] == 'show' %>
+          <%= link_to yes, "#", id: "confirm-action", class: yes_btn, method: :delete %>
         <% else %>
           <button type="button" class="<%= yes_btn %>" id="confirm-button"><%= yes %></button>
         <% end %>
-
       </div>
     </div>
   </div>
