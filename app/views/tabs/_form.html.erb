@@ -1,4 +1,4 @@
-<%= form_with(model: tab, html: { id: 'tab-form' }) do |form| %>
+<%= form_with(model: tab, html: { id: "tab-form" }) do |form| %>
   <% if tab.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(tab.errors.count, "error") %> prohibited this tab from being saved:</h2>
@@ -24,8 +24,8 @@
   <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions d-flex align-items-center justify-content-center mt-2">
-    <%= button_tag button_label, type: "button", class: "btn btn-outline-primary", id: "submit-button" %>
+    <%= button_tag button_label, type: "button", class: "btn btn-outline-primary submit-button", data: { form_id: "tab-form" } %>
   </div>
 <% end %>
 
-<%= render 'shared/form_modal', title: 'Confirm Submission', body: 'Are you sure?', no: 'Cancel', yes: 'Confirm' %>
+<%= render 'shared/modal', title: 'Confirm Submission', body: 'Are you sure?', no: 'Cancel', yes: 'Confirm', no_btn: 'btn btn-danger', yes_btn: 'btn btn-success'  %>
