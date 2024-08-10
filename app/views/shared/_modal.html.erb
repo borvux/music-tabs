@@ -10,10 +10,13 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="<%= no_btn %>" data-bs-dismiss="modal"><%= no %></button>
-        <button type="button" class="<%= yes_btn %>" id="confirm-button"><%= yes %></button>
+        <% if params[:action] == 'show' %>
+          <%= link_to yes, "#", id: "confirm-delete", class: yes_btn, method: :delete %>
+        <% else %>
+          <button type="button" class="<%= yes_btn %>" id="confirm-button"><%= yes %></button>
+        <% end %>
+
       </div>
     </div>
   </div>
 </div>
-
-<%= javascript_include_tag 'modal' %>

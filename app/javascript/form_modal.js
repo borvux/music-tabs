@@ -31,14 +31,4 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error('Form not found:', formId);
     }
   });
-
-  // Add event listener to the delete modal
-  var deleteModal = document.getElementById('confirmationModal');
-  deleteModal.addEventListener('show.bs.modal', function (event) {
-    var button = event.relatedTarget;
-    var tabId = button.getAttribute('data-bs-tab-id');
-
-    var deleteButton = deleteModal.querySelector('.modal-footer form');
-    deleteButton.action = `/tabs/${tabId}`;
-  });
 });

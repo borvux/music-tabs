@@ -37,7 +37,7 @@
           <div class="actions d-flex align-items-center justify-content-center">
             <%#= f.submit "Update", class: "btn btn-primary m-2" %>
 
-            <%= button_tag "Update", type: "button", class: "btn btn-info m-2 submit-button", data: { form_id: "user-edit-form"} %>
+            <%= button_tag "Update", type: "button", class: "btn btn-info m-2 submit-button", data: { form_id: "user-edit-form" } %>
           </div>
         <% end %>
       </div>
@@ -62,3 +62,5 @@
 </div>
 
 <%= render 'shared/modal', title: 'Confirm Changes', body: 'Are you sure?', no: 'Cancel', yes: 'Confirm', no_btn: 'btn btn-danger', yes_btn: 'btn btn-success' %>
+
+<%= javascript_include_tag 'form_modal' %>
