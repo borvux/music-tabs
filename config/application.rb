@@ -36,5 +36,8 @@ module RailsTemplate
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # adding this to fix 'SassC::SyntaxError: Error: Custom property values may not be empty. (SassC::SyntaxError)'
+    config.assets.css_compressor = nil
   end
 end

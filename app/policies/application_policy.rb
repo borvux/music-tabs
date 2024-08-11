@@ -38,7 +38,7 @@ class ApplicationPolicy
 
   # for rails_admin
   def dashboard?
-    record.admin?
+    @record.admin?
   end
 
   def export?

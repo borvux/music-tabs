@@ -15,4 +15,4 @@ import "trix"
 import "@rails/actiontext"
 
 // importing for building for mobile
-import './pwa/companion'
+import "./pwa/companion";
