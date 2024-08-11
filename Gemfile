@@ -21,6 +21,7 @@ gem "image_processing" #, "~> 1.2"
 gem "pundit"
 gem "kaminari", "~> 1.2"
 gem 'ransack'
+gem 'rails_admin', '~> 3.0'
 
 # brew install vips
 # gem install ruby-vips
@@ -68,3 +69,4 @@ group :test do
   gem "rspec-html-matchers"
   gem "webmock"
 end
+gem "sassc-rails"
