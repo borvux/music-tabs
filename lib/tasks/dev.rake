@@ -299,7 +299,7 @@ task({ :sample_data => :environment }) do
   end
 
   # default user
-  User.create(email: "alice@example.com", password: "password")
+  User.create(email: "alice@example.com", password: "password", admin: true)
 
   # create 4 more random users 
   4.times do
