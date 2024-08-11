@@ -36,6 +36,24 @@ class ApplicationPolicy
     false
   end
 
+  # for rails_admin
+
+  def dashboard?
+    false
+  end
+
+  def export?
+    false
+  end
+
+  def history?
+    false
+  end
+
+  def show_in_app?
+    false
+  end
+
   class Scope
     def initialize(user, scope)
       @user = user
