@@ -37,7 +37,6 @@ class ApplicationPolicy
   end
 
   # for rails_admin
-
   def dashboard?
     false
   end
