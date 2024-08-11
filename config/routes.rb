@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     mount RailsAdmin::Engine, at: "admin", as: "rails_admin"
   end
 
-  # This is a blank app! Pick your first screen, build out the RCAV, and go from there. E.g.:
-
-  # get "/your_first_screen" => "pages#first"
-
   root "tabs#welcome"
+
+  # for PWAs
+  get "/service-worker.js", to: "service_worker#service_worker"
+  get "/manifest.json", to: "service_worker#manifest"
 end
