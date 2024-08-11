@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-light">
+<nav class="navbar navbar-expand-md bg-body-tertiary sticky-top bg-light">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand fs-2 text-decoration-none text-dark ms-2" do %>
       <i class="fa-solid fa-music fs-1 text-info"></i>
@@ -8,7 +8,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 link-center home-tabs-center">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 home-tabs-center">
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Home", root_path, class: "nav-link", aria: { current: "page" } %>
@@ -19,18 +19,20 @@
         <% end %>
       </ul>
       <% if user_signed_in? %>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
           <li class="nav-item d-flex align-items-center">
-            <%= link_to edit_user_registration_path, class: "btn btn-sm btn-outline-success", aria: { current: "page" } do %>
+            <%= link_to edit_user_registration_path, class: "btn btn-sm btn-outline-success mb-2 mb-md-0", aria: { current: "page" } do %>
               <i class="bi bi-gear-fill"></i>
             <% end %>
           </li>
           <li class="nav-item d-flex align-items-center">
             <%= link_to "Logout", "#", class: "btn btn-sm btn-outline-danger", data: { bs_toggle: "modal", bs_target: "#logoutConfirmationModal", path: destroy_user_session_path } %>
           </li>
-        <% else %>
+        </ul>
+      <% else %>
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0 p-0">
           <li class="nav-item d-flex align-items-center">
-            <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-sm btn-info", aria: { current: "page" } %>
+            <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-sm btn-info mb-2 mb-md-0", aria: { current: "page" } %>
           </li>
           <li class="nav-item d-flex align-items-center">
             <%= link_to "Sign-in", new_user_session_path, class: "btn btn-sm btn-outline-info", aria: { current: "page" } %>
