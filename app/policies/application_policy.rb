@@ -38,19 +38,19 @@ class ApplicationPolicy
 
   # for rails_admin
   def dashboard?
-    false
+    record.admin?
   end
 
   def export?
-    false
+    dashboard?
   end
 
   def history?
-    false
+    export?
   end
 
   def show_in_app?
-    false
+    history?
   end
 
   class Scope
