@@ -24,3 +24,7 @@
 .carousel-item img {
   height: 400px; /* Maintain aspect ratio */
 }
+
+.home-tabs-center {
+  margin-right: 32px;
+}
