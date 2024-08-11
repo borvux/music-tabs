@@ -1,0 +1,7 @@
+<%= search_form_for @q, url: tabs_path, method: :get, remote: true, html: { id: 'search-form' } do |f| %>
+  <div class="input-group">
+    <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+    <%= f.search_field :title_cont, placeholder: "Search tabs", class: "form-control", id: 'search-input', oninput: "submitForm();" %>
+    <%= f.submit class: "d-none" %>
+  </div>
+<% end %>

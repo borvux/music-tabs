@@ -21,14 +21,14 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
           <div class="d-flex align-items-center">
-          <li class="nav-item">
-            <%= link_to edit_user_registration_path, class: "btn btn-sm btn-outline-success", aria: { current: "page" } do %>
-              <i class="bi bi-gear-fill" fill="currentColor"></i>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Logout", destroy_user_session_path, class: "btn btn-sm btn-outline-danger", method: :delete, aria: { current: "page" } %>
-          </li>
+            <li class="nav-item">
+              <%= link_to edit_user_registration_path, class: "btn btn-sm btn-outline-success", aria: { current: "page" } do %>
+                <i class="bi bi-gear-fill" fill="currentColor"></i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Logout", "#", class: "btn btn-sm btn-outline-danger", data: { bs_toggle: "modal", bs_target: "#logoutConfirmationModal", path: destroy_user_session_path } %>
+            </li>
           </div>
         <% else %>
           <div class="d-flex align-items-center">
@@ -44,3 +44,7 @@
     </div>
   </div>
 </nav>
+
+<%= render 'shared/modal', title: 'Confirm Logout', body: 'Are you sure you want to logout?', yes: 'Logout', no: 'Cancel', yes_btn: 'btn btn-danger', no_btn: 'btn btn-info', devise_action: true, modal_id: 'logoutConfirmationModal' %>
+
+<%= javascript_include_tag 'link_modal' %>

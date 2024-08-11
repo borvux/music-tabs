@@ -1,4 +1,4 @@
-<%= form_with(model: tab, local: false) do |form| %>
+<%= form_with(model: tab, html: { id: "tab-form" }) do |form| %>
   <% if tab.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(tab.errors.count, "error") %> prohibited this tab from being saved:</h2>
@@ -21,10 +21,13 @@
     <%= form.rich_text_area :content, class: "form-control" %>
   </div>
 
-  <!-- add the current user id value -->
   <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions d-flex align-items-center justify-content-center mt-2">
-    <%= form.submit "Submit", class: "btn btn-primary" %>
+    <%= button_tag button_label, type: "button", class: "btn btn-info submit-button", data: { form_id: "tab-form" } %>
   </div>
 <% end %>
+
+<%= render 'shared/modal', title: 'Confirm Submission', body: 'Are you sure?', no: 'Cancel', yes: 'Confirm', no_btn: 'btn btn-danger', yes_btn: 'btn btn-success', devise_action: false, modal_id: 'updateConfirmationModal' %>
+
+<%= javascript_include_tag 'form_modal' %>

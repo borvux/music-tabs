@@ -11,3 +11,16 @@
   width: 750px;
   height: auto;
 }
+
+.carousel-item {
+  position: relative; /* Ensure positioning is relative for inner content */
+}
+
+.carousel-caption {
+  position: relative; 
+  width: 70%; 
+}
+
+.carousel-item img {
+  height: 400px; /* Maintain aspect ratio */
+}

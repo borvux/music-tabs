@@ -1,30 +1,12 @@
 <div class="row justify-content-center">
   <div class="col-9 mb-3">
-    <%= search_form_for @q, url: tabs_path, method: :get, remote: true, html: { id: 'search-form' } do |f| %>
-      <div class="input-group">
-        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-        <%= f.search_field :title_cont, placeholder: "Search tabs", class: "form-control", id: 'search-input', oninput: "submitForm();" %>
-        <%= f.submit class: "d-none" %>
-      </div>
-    <% end %>
+    <%= render 'tabs/index/search_bar' %>
   </div>
 </div>
 
 <div class="row justify-content-center">
   <div class="col-9">
-    <div class="card">
-      <div class="card-header d-flex justify-content-between align-items-center">
-        <div class="h4">Tabs</div>
-        <%= link_to new_tab_path, class: "btn btn-sm btn-outline-primary" do %>
-          <i class="fa-solid fa-plus fa-lg"></i>
-        <% end %>
-      </div>
-      <ul class="list-group list-group-flush">
-        <div id="tabs">
-          <%= render 'tabs_list', tabs: @tabs %>
-        </div>
-      </ul>
-    </div>
+    <%= render 'tabs/index/index_card', tabs: @tabs%>
   </div>
 </div>
 
