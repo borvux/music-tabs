@@ -2,6 +2,10 @@
   background-color: #F0F3F4;
 }
 
+.white-bg {
+  background-color: whitesmoke;
+}
+
 .small-image {
   width: 250px; 
   height: auto;
@@ -27,4 +31,10 @@
 
 .home-tabs-center {
   margin-right: 32px;
+}
+
+#main-content {
+  min-height: calc(100vh - 180px); /* Adjust 70px to the height of your navbar */
+  display: flex;
+  align-items: center;
 }
