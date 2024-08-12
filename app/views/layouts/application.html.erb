@@ -3,6 +3,7 @@
   <head>
     <title>Music-Tabs</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,7 @@
     <%= javascript_importmap_tags %>
 
     <%= render "shared/cdn_assests"%>
+    <link rel="manifest" href="/manifest.json" />
   </head>
 
   <body class="grey-bg">
