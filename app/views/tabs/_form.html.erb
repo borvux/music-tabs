@@ -1,8 +1,7 @@
 <%= form_with(model: tab, html: { id: "tab-form" }) do |form| %>
   <% if tab.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(tab.errors.count, "error") %> prohibited this tab from being saved:</h2>
-
+    <div class="text-danger">
+      <h5><%= pluralize(tab.errors.count, "error") %> prohibited this tab from being saved:</h5>
       <ul>
         <% tab.errors.each do |error| %>
           <li><%= error.full_message %></li>
