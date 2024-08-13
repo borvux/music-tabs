@@ -22,6 +22,8 @@ gem "pundit"
 gem "kaminari", "~> 1.2"
 gem 'ransack'
 gem 'rails_admin', '~> 3.0'
+gem "meta-tags"
+gem 'rubocop'
 
 # brew install vips
 # gem install ruby-vips
