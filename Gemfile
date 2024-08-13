@@ -12,26 +12,17 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "redis", "~> 4.0"
-# gem "kredis"
-# gem "bcrypt", "~> 3.1.7"
+gem "kredis"
+gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
-# gem "sassc-rails"
-gem "image_processing" #, "~> 1.2"
+gem "sassc-rails"
+gem "image_processing"
 gem "pundit"
 gem "kaminari", "~> 1.2"
 gem 'ransack'
 gem 'rails_admin', '~> 3.0'
 gem "meta-tags"
-gem 'rubocop'
-
-# brew install vips
-# gem install ruby-vips
-# gem 'ruby-vips', '~> 2.2', '>= 2.2.2'
-# rails g pundit:install
-
-# AppDev Gems
-# ===========
 gem "appdev_support"
 gem "awesome_print"
 gem "devise"
@@ -45,12 +36,13 @@ gem "table_print"
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails", "~> 6.0.0"
+  gem 'rubocop', require: false
 end
 
 group :development do
   gem "web-console"
-  # gem "rack-mini-profiler"
-  # gem "spring"
+  gem "rack-mini-profiler"
+  gem "spring"
   gem "annotate"
   gem "better_errors"
   gem "binding_of_caller"
@@ -61,6 +53,7 @@ group :development do
   gem "rails-erd"
   gem "rufo"
   gem "specs_to_readme"
+  gem 'bullet'
 end
 
 group :test do
@@ -71,4 +64,3 @@ group :test do
   gem "rspec-html-matchers"
   gem "webmock"
 end
-gem "sassc-rails"
