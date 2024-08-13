@@ -32,6 +32,7 @@ gem "htmlbeautifier"
 gem "http"
 gem "sqlite3", "~> 1.4"
 gem "table_print"
+gem "blazer"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
