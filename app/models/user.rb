@@ -24,5 +24,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # has_many  :tabs, class_name: "Tab", foreign_key: "user_id", dependent: :destroy
-  has_many  :tabs, dependent: :destroy
+  has_many :tabs, dependent: :destroy
 end

@@ -1,5 +1,4 @@
 class TabPolicy < ApplicationPolicy
-
   def welcome?
     # anybody is welcome to view the landing page
     true
@@ -16,7 +15,7 @@ class TabPolicy < ApplicationPolicy
   end
 
   def create?
-    # anybody can create tabs 
+    # anybody can create tabs
     index?
   end
 

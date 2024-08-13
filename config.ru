@@ -2,8 +2,8 @@
 
 require_relative "config/environment"
 
-map '/' do
-	run Rails.application
+map "/" do
+  run Rails.application
 end
 
 Rails.application.load_server

@@ -16,7 +16,7 @@ module Punditable
   end
 
   def skip_policy_scope_verification?
-    # skip policy_scope verification if it is devise controller or all actions expect index from tabs controller 
-    devise_controller? || (self.class == TabsController && action_name != 'index')
+    # skip policy_scope verification if it is devise controller or all actions expect index from tabs controller
+    devise_controller? || (self.class == TabsController && action_name != "index")
   end
 end

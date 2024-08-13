@@ -1,11 +1,10 @@
 class TabsController < ApplicationController
   # don't need to autheticate_user for the welcome page
   before_action :authenticate_user!, except: [:welcome]
-  before_action :set_tab, only: %i[ show edit update destroy ]
+  before_action :set_tab, only: %i[show edit update destroy]
   before_action { authorize(@tab || Tab) }
 
-  def welcome
-  end
+  def welcome; end
 
   # GET /tabs or /tabs.json
   def index
@@ -14,7 +13,7 @@ class TabsController < ApplicationController
 
     @breadcrumbs = [
       { content: "Tabs", href: tabs_path },
-      { content: "Page #{params[:page] || 1}" },
+      { content: "Page #{params[:page] || 1}" }
     ]
 
     respond_to do |format|
@@ -27,7 +26,7 @@ class TabsController < ApplicationController
   def show
     @breadcrumbs = [
       { content: "Tabs", href: tabs_path },
-      { content: @tab.to_s, href: tab_path(@tab) },
+      { content: @tab.to_s, href: tab_path(@tab) }
     ]
   end
 
@@ -35,7 +34,7 @@ class TabsController < ApplicationController
   def new
     @breadcrumbs = [
       { content: "Tabs", href: tabs_path },
-      { content: "New" },
+      { content: "New" }
     ]
     @tab = Tab.new
   end
@@ -45,7 +44,7 @@ class TabsController < ApplicationController
     @breadcrumbs = [
       { content: "Tabs", href: tabs_path },
       { content: @tab.to_s, href: tab_path(@tab) },
-      { content: "Edit" },
+      { content: "Edit" }
     ]
   end
 
@@ -57,7 +56,7 @@ class TabsController < ApplicationController
       if @tab.save
         @breadcrumbs = [
           { content: "Tabs", href: tabs_path },
-          { content: @tab.to_s, href: tab_path(@tab) },
+          { content: @tab.to_s, href: tab_path(@tab) }
         ]
         format.html { redirect_to tab_url(@tab), notice: "Tab was successfully created." }
         format.json { render :show, status: :created, location: @tab }
@@ -74,7 +73,7 @@ class TabsController < ApplicationController
       if @tab.update(tab_params)
         @breadcrumbs = [
           { content: "Tabs", href: tabs_path },
-          { content: @tab.to_s, href: tab_path(@tab) },
+          { content: @tab.to_s, href: tab_path(@tab) }
         ]
         format.html { redirect_to tab_url(@tab), notice: "Tab was successfully updated." }
         format.json { render :show, status: :ok, location: @tab }
