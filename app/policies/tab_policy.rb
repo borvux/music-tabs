@@ -1,21 +1,17 @@
 class TabPolicy < ApplicationPolicy
   def welcome?
-    # anybody is welcome to view the landing page
     true
   end
 
   def index?
-    # only the current user can see all the tabs created by them
-    user == user
+    true
   end
 
   def show?
-    # the user can view the tabs they have created
     user == record.user
   end
 
   def create?
-    # anybody can create tabs
     index?
   end
 
@@ -24,7 +20,6 @@ class TabPolicy < ApplicationPolicy
   end
 
   def update?
-    # only the owner of the tab can update
     show?
   end
 
@@ -33,7 +28,6 @@ class TabPolicy < ApplicationPolicy
   end
 
   def destroy?
-    # only the owner of the tab can destory
     show?
   end
 
