@@ -1,6 +1,5 @@
 desc "Fill the database tables with some sample data"
 task({ sample_data: :environment }) do
-  # to use the simple_format method
   include ActionView::Helpers::TextHelper
 
   p "Creating sample data"
@@ -298,10 +297,6 @@ task({ sample_data: :environment }) do
     Tab.destroy_all
   end
 
-  # default user
-  User.create(email: "alice@example.com", password: "password", admin: true)
-
-  # create 4 more random users
   4.times do
     name = Faker::Name.first_name.downcase
     User.create(
@@ -314,7 +309,6 @@ task({ sample_data: :environment }) do
     Tab.create(
       title: Faker::Music::GratefulDead.song,
       user_id: User.pluck(:id).sample,
-      # using sample_format to get the newline and breaks
       content: simple_format(sample_tabs.sample)
     )
   end
