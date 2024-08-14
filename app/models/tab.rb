@@ -11,14 +11,16 @@
 #
 class Tab < ApplicationRecord
   include Ransackable
-  # belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
+
   belongs_to :user
 
-  # needed to change it to a trix text editor 
+  # needs 'has_rich_text' since it's a rails action text
   has_rich_text :content
 
-  # scope to find tabs created by certain users 
-  scope :by_user, ->(user) { where(user: user) }
+  scope :by_user, ->(user) { where(user:) }
+  
+  validates :title, presence: true
+  validates :content, presence: true
 
   def to_s
     "#{title.capitalize}"

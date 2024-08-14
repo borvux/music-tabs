@@ -28,16 +28,4 @@
   </div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', (event) => {
-    <% if notice.present? %>
-      var noticeToast = new bootstrap.Toast(document.getElementById('noticeToast'))
-      noticeToast.show()
-    <% end %>
-
-    <% if alert.present? %>
-      var alertToast = new bootstrap.Toast(document.getElementById('alertToast'))
-      alertToast.show()
-    <% end %>
-  });
-</script>
+<%= javascript_include_tag 'toast' %>

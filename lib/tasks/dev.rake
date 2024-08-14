@@ -1,6 +1,5 @@
 desc "Fill the database tables with some sample data"
-task({ :sample_data => :environment }) do
-  # to use the simple_format method
+task({ sample_data: :environment }) do
   include ActionView::Helpers::TextHelper
 
   p "Creating sample data"
@@ -169,7 +168,7 @@ task({ :sample_data => :environment }) do
   tab_three = <<-SONG
   [Intro]
   C   D   G   Em   x2
-  
+
   [Verse 1]
             C        D
   I used to rule the world
@@ -179,10 +178,10 @@ task({ :sample_data => :environment }) do
   Now in the morning I sleep alone
             G                 Em
   Sweep the streets I used to own
-  
+
   [Interlude]
   C   D   G   Em   x2
-  
+
   [Verse 2]
             C        D
   I used to roll the dice
@@ -200,7 +199,7 @@ task({ :sample_data => :environment }) do
   And I discovered that my castles stand
        G                       Em
   Upon pillars of salt and pillars of sand
-  
+
   [Chorus]
     C              D
   I hear Jerusalem bells are ringing
@@ -216,10 +215,10 @@ task({ :sample_data => :environment }) do
   Once you'd gone there was never, never an honest word
            Bm               Em
   That was when I ruled the world
-  
+
   [Interlude]
   C   D   G   Em   x2
-  
+
   [Verse 3]
                         C    D
   It was the wicked and wild wind
@@ -237,7 +236,7 @@ task({ :sample_data => :environment }) do
   Just a puppet on a lonely string
       G                         Em
   Oh, who would ever want to be king?
-  
+
   [Chorus]
     C              D
   I hear Jerusalem bells are ringing
@@ -255,16 +254,16 @@ task({ :sample_data => :environment }) do
   Never an honest word
                Bm               Em
   But that was when I ruled the world
-  
+
   [Interlude]
   C   Em   x3
   D   D
-  
+
     C   D    G   Em
   Ohhhhhh  Ohhhhhhh
     C   D    G   Em
   Ohhhhhh  Ohhhhhhh
-  
+
   [Chorus]
     C              D
   I hear Jerusalem bells are ringing
@@ -282,14 +281,14 @@ task({ :sample_data => :environment }) do
   Never an honest word
                Bm               Em
   But that was when I ruled the world
-  
+
   [Outro]
   C    D  Bm   Em
   Oooooh  Ooooooh
   C    D  Bm   Em
   Oooooh  Ooooooh
   SONG
-  
+
   sample_tabs = [tab_one, tab_two, tab_three]
 
   # destory all the db before creating sample_data
@@ -298,15 +297,11 @@ task({ :sample_data => :environment }) do
     Tab.destroy_all
   end
 
-  # default user
-  User.create(email: "alice@example.com", password: "password", admin: true)
-
-  # create 4 more random users 
   4.times do
     name = Faker::Name.first_name.downcase
     User.create(
       email: "#{name}@example.com",
-      password: "password",
+      password: "password"
     )
   end
 
@@ -314,8 +309,7 @@ task({ :sample_data => :environment }) do
     Tab.create(
       title: Faker::Music::GratefulDead.song,
       user_id: User.pluck(:id).sample,
-      # using sample_format to get the newline and breaks 
-      content: simple_format(sample_tabs.sample),
+      content: simple_format(sample_tabs.sample)
     )
   end
 

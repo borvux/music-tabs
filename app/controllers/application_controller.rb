@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protected
 
   # after you sign in, it goes to the tab path
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(_resource)
     tabs_path
   end
 end

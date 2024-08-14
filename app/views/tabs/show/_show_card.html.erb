@@ -1,16 +1,16 @@
 <div class="card mb-5">
   <div class="card-header d-flex justify-content-between align-items-center">
-    <div class="col-3">
+    <div>
       <%= link_to tabs_path do %>
         <i class="fa-solid fa-chevron-left"></i>
       <% end %>
     </div>
 
-    <div class="col-3 h5 text-center">
+    <div class="h4 text-center flex-grow-1">
       <%= tab.title %>
     </div>
 
-    <div class="col-3 d-flex justify-content-end">
+    <div class="d-flex justify-content-end">
       <div>
         <%= link_to edit_tab_path(tab) do %>
           <i class="fa-solid fa-pen-to-square"></i>
