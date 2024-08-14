@@ -293,7 +293,7 @@ task({ sample_data: :environment }) do
 
   # destory all the db before creating sample_data
   if Rails.env.development?
-    User.destroy_all
+    User.where.not(email: "alice@example.com").destroy_all
     Tab.destroy_all
   end
 
