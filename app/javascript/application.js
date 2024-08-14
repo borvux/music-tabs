@@ -14,5 +14,3 @@ Rails.start();
 // required for rails action text trix editor 
 import "trix"
 import "@rails/actiontext"
-
-// importing for building for mobile
