@@ -26,7 +26,6 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "rails_admin", "~> 3.0"
 gem "ransack"
 gem "redis", "~> 4.0"
-gem "sassc-rails"
 gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 gem "stimulus-rails"
@@ -55,6 +54,7 @@ group :development do
   gem "specs_to_readme"
   gem "spring"
   gem "web-console"
+  gem "sassc-rails"
 end
 
 group :test do
