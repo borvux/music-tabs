@@ -32,10 +32,10 @@
       <% else %>
         <ul class="navbar-nav ms-auto mb-2 mb-md-0 p-0">
           <li class="nav-item d-flex align-items-center">
-            <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-sm btn-info mb-2 mb-md-0", aria: { current: "page" } %>
+            <%= link_to "Sign-in", new_user_session_path, class: "btn btn-sm btn-outline-secondary", aria: { current: "page" } %>
           </li>
           <li class="nav-item d-flex align-items-center">
-            <%= link_to "Sign-in", new_user_session_path, class: "btn btn-sm btn-outline-info", aria: { current: "page" } %>
+            <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-info mb-2 mb-md-0", aria: { current: "page" } %>
           </li>
         </ul>
       <% end %>
