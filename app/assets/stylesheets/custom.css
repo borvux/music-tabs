@@ -1,3 +1,24 @@
+@media (max-width: 767.98px) {
+  .navbar-nav .btn-outline-secondary,
+  .navbar-nav .btn-info {
+    all: unset; 
+    display: inline-block; 
+    margin: .5rem 0rem; /* Adjust padding as needed */
+    padding: .5rem .5rem;
+    text-decoration: none; /* Remove underline */
+  }
+
+  /* Sign-in button */
+  .navbar-nav .btn-outline-secondary {
+    color: #6c757d !important; /* Apply text-secondary */
+  }
+
+  /* Sign-up button */
+  .navbar-nav .btn-info {
+    color: #17a2b8 !important; /* Apply text-info */
+  }
+}
+
 .grey-bg {
   background-color: #F0F3F4;
 }
@@ -30,7 +51,7 @@
 }
 
 .home-tabs-center {
-  margin-right: 32px;
+  margin-right: 132px;
 }
 
 #main-content {
