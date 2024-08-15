@@ -40,7 +40,6 @@
 }
 
 .bg-landing-page {
-  background-image: url('/assets/landing-page.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
