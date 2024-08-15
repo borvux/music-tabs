@@ -17,7 +17,7 @@
 }
 
 .carousel-item {
-  position: relative; /* Ensure positioning is relative for inner content */
+  position: relative;
 }
 
 .carousel-caption {
@@ -26,7 +26,7 @@
 }
 
 .carousel-item img {
-  height: 400px; /* Maintain aspect ratio */
+  height: 400px;
 }
 
 .home-tabs-center {
@@ -34,7 +34,23 @@
 }
 
 #main-content {
-  min-height: calc(100vh - 180px); /* Adjust 70px to the height of your navbar */
+  min-height: calc(100vh - 180px);
   display: flex;
   align-items: center;
+}
+
+.bg-page {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 10px !important;
+  box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.50) !important;
+-webkit-box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.50) !important;
+-moz-box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.50) !important;
+}
+
+.review-img-height {
+  max-height: 250px;
+  border-radius: 16px;
+  filter: grayscale(50%)
 }

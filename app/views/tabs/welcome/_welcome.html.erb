@@ -1,16 +1,14 @@
-<div class="row m-5" id="main-content">
+<div class="row my-5 mx-1 bg-page" id="main-content" style="background-image: url('<%= asset_path("landing-page.jpg") %>')">
   <div class="col-md text-center">
-    <div class="h1 mb-3">Simplify Your Song Tabs Management</div>
-    <div class="mb-4">Music Tab is here to revolutionize the way you manage your song tabs</div>
+    <div class="h1 mb-3 text-light"><strong>Simplify Your Song Tabs Management</strong></div>
+    <div class="mb-4 text-light"><strong>Music Tab is here to revolutionize the way you manage your song tabs</strong></div>
     <% if !user_signed_in? %>
       <div class="mb-3">
-        <%= link_to "Get Started", new_user_registration_path, class: "btn btn-info btn-xl px-5 py-3", aria: { label: "Get Started" } %>
+        <%= link_to "Get Started", new_user_registration_path, class: "btn btn-info px-5 py-4 fs-4", aria: { label: "Get Started" } %>
       </div>
       <div>
-        <%= link_to "Sign-in", new_user_session_path, class: "btn btn-sm btn-outline-info", aria: { current: "page" } %>
+        <%= link_to "Sign-in", new_user_session_path, class: "btn btn-sm btn-outline-light", aria: { current: "page" } %>
       </div>
-    <% else %>
-      <img src="<%= asset_path 'music_notes.png' %>" alt="Notes Tabs" class="img-fluid small-image m-4">
     <% end %>
   </div>
 </div>

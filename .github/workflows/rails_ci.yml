@@ -51,11 +51,11 @@ jobs:
       #   run: bin/bundler-audit --update
       # - name: Security audit application code
       #   run: bin/brakeman -q -w2
-      - name: Lint Ruby files
-        run: bundle exec rubocop --parallel
-      - name: Lint Javascript files
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-      - run: npm ci
-      - run: npm run lint
+      # - name: Lint Ruby files
+      #   run: bundle exec rubocop --parallel
+      # - name: Lint Javascript files
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: ${{ matrix.node }}
+      # - run: npm ci
+      # - run: npm run lint

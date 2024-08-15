@@ -39,7 +39,5 @@ module RailsTemplate
 
     # adding this to fix 'SassC::SyntaxError: Error: Custom property values may not be empty. (SassC::SyntaxError)'
     config.assets.css_compressor = nil
-
-    config.public_file_server.enabled = true
   end
 end
