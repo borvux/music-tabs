@@ -1,15 +1,15 @@
 <% page_title "Login - Music Tab" %>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center" role="main">
   <div class="col-md-4">
-    <div class="card m-3">
+    <div class="card m-3" aria-labelledby="login-heading">
       <div class="card-body">
-        <div class="h2 text-center">Log in</div>
+        <h2 id="login-heading" class="text-center">Log in</h2>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.label :email, class: "form-label" %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", aria: { describedby: "email-help" } %>
           </div>
 
           <div class="field">
@@ -18,14 +18,14 @@
           </div>
 
           <% if devise_mapping.rememberable? %>
-            <div class=" p-2 d-flex align-items-center justify-content-center">
-              <%= f.check_box :remember_me, class: "p-2 form-check-input" %>
+            <div class="p-2 d-flex align-items-center justify-content-center">
+              <%= f.check_box :remember_me, class: "p-2 form-check-input", aria: { label: "Remember me" } %>
               <%= f.label :remember_me, class: "p-1" %>
             </div>
           <% end %>
 
           <div class="actions d-flex align-items-center justify-content-center">
-            <%= f.submit "Log in", class: "btn btn-primary"%>
+            <%= f.submit "Log in", class: "btn btn-primary", aria: { label: "Log in to Music Tab" } %>
           </div>
         <% end %>
 

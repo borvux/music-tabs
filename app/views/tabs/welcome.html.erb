@@ -1,9 +1,13 @@
 <% page_title "Manage All Tabs In One Place - Music Tab" %>
 
-<%= render 'tabs/welcome/welcome' %>
+<div role="main" aria-labelledby="welcome-header">
+  <h1 id="welcome-header" class="sr-only">Manage All Tabs In One Place - Music Tab</h1>
 
-<%= render 'tabs/welcome/why' %>
+  <%= render 'tabs/welcome/welcome' %>
 
-<%= render 'tabs/welcome/navigate' %>
+  <%= render 'tabs/welcome/why' %>
 
-<%= render 'tabs/welcome/review' %>
+  <%= render 'tabs/welcome/navigate' %>
+
+  <%= render 'tabs/welcome/review' %>
+</div>

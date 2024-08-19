@@ -1,6 +1,6 @@
-<%= form_with(model: tab, html: { id: "tab-form" }) do |form| %>
+<%= form_with(model: tab, html: { id: "tab-form", role: "form" }) do |form| %>
   <% if tab.errors.any? %>
-    <div class="text-danger">
+    <div class="text-danger" role="alert">
       <h5><%= pluralize(tab.errors.count, "error") %> prohibited this tab from being saved:</h5>
       <ul>
         <% tab.errors.each do |error| %>
@@ -12,18 +12,17 @@
 
   <div class="field">
     <%= form.label :title, style: "display: block", class: "h5 form-label" %>
-    <%= form.text_field :title, class: "form-control" %>
+    <%= form.text_field :title, class: "form-control", aria: { describedby: "title-help" } %>
   </div>
 
   <div class="field mt-4">
     <%= form.label :content, style: "display: block", class: "h5 form-label" %>
-    <%= form.rich_text_area :content, class: "form-control" %>
+    <%= form.rich_text_area :content, class: "form-control", aria: { describedby: "content-help" } %>
   </div>
 
-  <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions d-flex align-items-center justify-content-center mt-2">
-    <%= button_tag button_label, type: "button", class: "btn btn-info submit-button", data: { form_id: "tab-form" } %>
+    <%= button_tag button_label, type: "button", class: "btn btn-info submit-button", data: { form_id: "tab-form" }, aria: { label: "Submit Tab" } %>
   </div>
 <% end %>
 

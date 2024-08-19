@@ -1,31 +1,31 @@
-<div class="card mb-5">
+<div class="card mb-5" role="region" aria-labelledby="tab-title">
   <div class="card-header d-flex justify-content-between align-items-center">
     <div>
-      <%= link_to tabs_path do %>
+      <%= link_to tabs_path, aria: { label: "Back to tabs" } do %>
         <i class="fa-solid fa-chevron-left"></i>
       <% end %>
     </div>
 
-    <div class="h4 text-center flex-grow-1">
+    <div id="tab-title" class="h4 text-center flex-grow-1">
       <%= tab.title %>
     </div>
 
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-end" aria-label="Edit or delete tab">
       <div>
-        <%= link_to edit_tab_path(tab) do %>
+        <%= link_to edit_tab_path(tab), aria: { label: "Edit tab #{tab.title}" } do %>
           <i class="fa-solid fa-pen-to-square"></i>
         <% end %>
       </div>
 
       <div>
-        <%= link_to "#", data: { bs_toggle: "modal", bs_target: "#confirmationModal", bs_tab_id: tab.id } do %>
+        <%= link_to "#", data: { bs_toggle: "modal", bs_target: "#confirmationModal", bs_tab_id: tab.id }, aria: { label: "Delete tab #{tab.title}" } do %>
           <i class="fa-solid fa-trash text-danger ms-2"></i>
         <% end %>
       </div>
     </div>
   </div>
 
-  <div class="card-body container-fluid">
+  <div class="card-body container-fluid" role="main" aria-labelledby="tab-title">
     <%= tab.content %>
   </div>
 </div>

@@ -1,15 +1,15 @@
-<footer id="auto-scroll" class="fixed-bottom bg-light">
+<footer id="auto-scroll" class="fixed-bottom bg-light" role="contentinfo" aria-labelledby="auto-scroll-btn">
   <div class="container-md-fluid">
     <div class="row justify-content-center">
       <div class="col text-center my-1">
-        <button id="auto-scroll-btn" class="btn btn-outline-dark-emphasis">
+        <button id="auto-scroll-btn" class="btn btn-outline-dark-emphasis" aria-label="Toggle auto-scroll">
           Auto Scroll<i class="fa-solid fa-play ms-2"></i>
         </button>
 
-        <div class="btn-group">
-          <div id="decrease-speed-btn" class="btn btn-outline-dark-emphasis"><i class="fa-solid fa-minus"></i></div>
+        <div class="btn-group" role="group" aria-label="Scroll speed controls">
+          <div id="decrease-speed-btn" class="btn btn-outline-dark-emphasis" aria-label="Decrease scroll speed"><i class="fa-solid fa-minus"></i></div>
           <div class="btn btn-outline-dark-emphasis" aria-current="page" id="scroll-speed-display">Scroll Speed: 1</div>
-          <div id="increase-speed-btn" class="btn btn-outline-dark-emphasis"><i class="fa-solid fa-plus"></i></div>
+          <div id="increase-speed-btn" class="btn btn-outline-dark-emphasis" aria-label="Increase scroll speed"><i class="fa-solid fa-plus"></i></div>
         </div>
       </div>
     </div>
@@ -17,3 +17,4 @@
 </footer>
 
 <%= javascript_include_tag 'auto_scroll' %>
+

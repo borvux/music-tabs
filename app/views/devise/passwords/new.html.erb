@@ -1,10 +1,10 @@
 <% page_title "Forgot your password? - Music Tab" %>
-<div class="row justify-content-center">
+<div class="row justify-content-center" role="region" aria-labelledby="forgot-password-heading">
   <div class="col-lg-4">
     <div class="card m-3">
       <div class="card-body">
-        <div class="h2 text-center">Forgot your password?</div>
-        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <div id="forgot-password-heading" class="h2 text-center">Forgot your password?</div>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: "form", "aria-labelledby": "forgot-password-heading" }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
           <div class="field">

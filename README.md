@@ -47,6 +47,9 @@ To run Music Tab locally:
     ```bash
     rails server
     ```
+5. **Default Admin User**
+- email: `alice@example.com`
+- password: `password`
 
 ## Configuration
 No additional configuration is needed for running the app locally.
@@ -81,7 +84,7 @@ I welcome any contributions to enhance Music Tab! Please follow the guidelines b
 - Ensure that all tests pass and the code is reviewed before merging.
 
 ## Entity Relationship Diagram
-<img src="app/assets/images/ERD.png" alt="Entity Relationship Diagram Image"/>
+<img src="erd.png" alt="Entity Relationship Diagram Image"/>
 
 ## Troubleshooting
 - **Unable to start the Rails server:** 

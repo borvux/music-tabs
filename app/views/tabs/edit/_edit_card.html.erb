@@ -1,15 +1,15 @@
-<div class="card">
+<div class="card" role="region" aria-labelledby="edit-tab-title">
   <div class="card-header d-flex justify-content-between align-items-center">
     <div class="container">
       <div class="row d-flex align-items-center justify-content-start">
         <div class="col-4">
-          <%= link_to tab do %>
+          <%= link_to tab, aria: { label: "Go back to tab view" } do %>
             <i class="fa-solid fa-chevron-left"></i>
           <% end %>
         </div>
 
         <div class="col-4 text-center">
-          <div class="h4">Edit</div>
+          <div id="edit-tab-title" class="h4">Edit</div>
         </div>
       </div>
     </div>

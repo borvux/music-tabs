@@ -51,6 +51,7 @@ class TabsController < ApplicationController
   # POST /tabs or /tabs.json
   def create
     @tab = Tab.new(tab_params)
+    @tab.user = current_user
 
     respond_to do |format|
       if @tab.save
