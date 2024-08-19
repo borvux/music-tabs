@@ -2,8 +2,9 @@
 
 <div class="row justify-content-center">
   <div class="col-md-9">
-    <div id="edit-card">
-      <%= render 'tabs/edit/edit_card', tab: @tab%>
+    <div id="edit-card" role="region" aria-labelledby="edit-tab-title">
+      <h2 id="edit-tab-title" class="sr-only"><%= @tab.title %> - Edit</h2>
+      <%= render 'tabs/edit/edit_card', tab: @tab %>
     </div>
   </div>
 </div>

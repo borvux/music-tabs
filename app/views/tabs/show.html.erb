@@ -2,10 +2,12 @@
 
 <div class="row justify-content-center">
   <div class="col-md-9">
-    <div id="show-card">
+    <div id="show-card" role="region" aria-labelledby="show-tab-title">
+      <h2 id="show-tab-title" class="sr-only"><%= @tab.title %></h2>
       <%= render 'tabs/show/show_card', tab: @tab %>
     </div>
   </div>
 </div>
 
 <%= render 'tabs/show/auto_scroll' %>
+

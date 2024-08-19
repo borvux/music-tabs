@@ -6,11 +6,11 @@
 
 <div class="row justify-content-center">
   <div class="col-md-9">
-    <%= render 'tabs/index/index_card', tabs: @tabs%>
+    <%= render 'tabs/index/index_card', tabs: @tabs, aria: { role: "list" } %>
   </div>
 </div>
 
-<div class="d-flex justify-content-center mt-2">
+<div class="d-flex justify-content-center mt-2" role="navigation" aria-label="Pagination">
   <%= paginate @tabs, remote: true %>
 </div>
 
