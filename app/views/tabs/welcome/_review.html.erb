@@ -1,23 +1,26 @@
-<div class="bg-page m-1">
+<div class="bg-page m-1" role="region" aria-labelledby="carousel-reviews-title">
   <div class="row my-5 mx-1" id="main-content">
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    
+    <h2 id="carousel-reviews-title" class="visually-hidden">User Reviews Carousel</h2>
+    
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" aria-label="User Reviews Carousel">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
 
       <div class="carousel-inner">
         <div class="carousel-item active text-center" data-bs-interval="10000">
-          <img src="<%= asset_path 'g1.png' %>" alt="Olivia Bennett portrait" class="img-fluid mx-auto d-block review-img-height">
+          <img src="<%= asset_path 'g1.png' %>" alt="Portrait of Olivia Bennett" class="img-fluid mx-auto d-block review-img-height">
           <div class="carousel-caption d-block">
             <h4>A Must-Have for Musicians</h4>
             <div>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
             </div>
             <h5 class="mt-2">Olivia Bennett</h5>
             <p>Music Tab has completely changed how I manage my guitar tabs. It's super easy to create, organize, and update tabs, and having everything in one place is a game-changer. No more losing paper tabs, everything I need is just a click away.</p>
@@ -25,15 +28,15 @@
         </div>
 
         <div class="carousel-item text-center" data-bs-interval="2000">
-          <img src="<%= asset_path 'b1.png' %>" alt="Ethan Parker portrait" class="img-fluid mx-auto d-block review-img-height">
+          <img src="<%= asset_path 'b1.png' %>" alt="Portrait of Ethan Parker" class="img-fluid mx-auto d-block review-img-height">
           <div class="carousel-caption d-block">
             <h4>Perfect for Tab Organization</h4>
             <div>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star-half-stroke"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i>
             </div>
             <h5 class="mt-2">Ethan Parker</h5>
             <p>I've tried many tools, but Music Tab is by far the best. It's simple yet effective, making it easy to create and organize my tabs. The digital format has improved my practice sessions, and I can now focus more on playing. Love it!</p>
@@ -41,15 +44,15 @@
         </div>
 
         <div class="carousel-item text-center">
-          <img src="<%= asset_path 'g2.png' %>" alt="Sophia Carter portrait" class="img-fluid mx-auto d-block review-img-height">
+          <img src="<%= asset_path 'g2.png' %>" alt="Portrait of Sophia Carter" class="img-fluid mx-auto d-block review-img-height">
           <div class="carousel-caption d-block">
             <h4>Great Tool with Potential</h4>
             <div>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-regular fa-star" aria-hidden="true"></i>
             </div>
             <h5 class="mt-2">Sophia Carter</h5>
             <p>Music Tab makes managing tabs much easier. The app is intuitive and keeps everything organized. I'd love to see more features, but it's already saved me a lot of time. A solid app for any musician.</p>
@@ -57,11 +60,11 @@
         </div>
       </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev" aria-label="Previous Slide">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next" aria-label="Next Slide">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
