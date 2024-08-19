@@ -41,6 +41,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "rails-erd"
   gem "annotate"
   gem "better_errors"
   gem "binding_of_caller"
