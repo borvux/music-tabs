@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   draw :admin
+  draw :service_worker
 
   devise_for :users
   
@@ -10,7 +11,4 @@ Rails.application.routes.draw do
   end
 
   root "tabs#welcome"
-
-  get "/service-worker.js", to: "service_worker#service_worker"
-  get "/manifest.json", to: "service_worker#manifest"
 end

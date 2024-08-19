@@ -47,6 +47,9 @@ To run Music Tab locally:
     ```bash
     rails server
     ```
+5. **Default Admin User**
+- email: `alice@example.com`
+- password: `password`
 
 ## Configuration
 No additional configuration is needed for running the app locally.
