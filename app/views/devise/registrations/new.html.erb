@@ -1,23 +1,23 @@
 <% page_title "Sign up - Music Tab" %>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center" role="main">
   <div class="col-md-4">
-    <div class="card m-3">
+    <div class="card m-3" aria-labelledby="sign-up-heading">
       <div class="card-body">
-        <div class="h2 text-center">Sign up</div>
+        <h2 id="sign-up-heading" class="text-center">Sign up</h2>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
           <div class="field">
             <%= f.label :email, class: "form-label" %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", aria: { describedby: "email-help" } %>
           </div>
 
           <div class="field">
             <%= f.label :password, class: "form-label" %>
             <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <em id="password-help">(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
           </div>
@@ -28,7 +28,7 @@
           </div>
 
           <div class="actions d-flex align-items-center justify-content-center">
-            <%= f.submit "Sign up", class: "btn btn-primary m-2" %>
+            <%= f.submit "Sign up", class: "btn btn-primary m-2", aria: { label: "Sign up for Music Tab" } %>
           </div>
         <% end %>
 

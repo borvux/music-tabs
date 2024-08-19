@@ -1,28 +1,28 @@
 <% page_title "Edit Profile - Music Tab" %>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center" role="main">
   <div class="col-md-7">
-    <div class="card m-3">
+    <div class="card m-3" aria-labelledby="edit-profile-heading">
       <div class="card-body">
-        <div class="h2 text-center">Edit <%= resource_name.to_s.humanize %></div>
+        <h2 id="edit-profile-heading" class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "user-edit-form" }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
           <div class="field">
             <%= f.label :email, class: "form-label" %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", aria: { describedby: "email-help" } %>
           </div>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <div role="alert">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
 
           <div class="field">
             <%= f.label :password, class: "form-label" %> <i>(leave blank if you don't want to change it)</i><br />
-            <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control", aria: { describedby: "password-help" } %>
             <% if @minimum_password_length %>
-              <em><%= @minimum_password_length %> characters minimum</em>
+              <em id="password-help"><%= @minimum_password_length %> characters minimum</em>
             <% end %>
           </div>
 
@@ -37,7 +37,7 @@
           </div>
 
           <div class="actions d-flex align-items-center justify-content-center">
-            <%= button_tag "Update", type: "button", class: "btn btn-info m-2 submit-button", data: { form_id: "user-edit-form" } %>
+            <%= button_tag "Update", type: "button", class: "btn btn-info m-2 submit-button", data: { form_id: "user-edit-form" }, aria: { label: "Update Profile" } %>
           </div>
         <% end %>
       </div>
@@ -47,15 +47,15 @@
 
 <div class="row justify-content-center">
   <div class="col-md-4">
-    <div class="card m-3">
+    <div class="card m-3" aria-labelledby="cancel-account-heading">
       <div class="card-body">
-        <div class="h4 text-center">Cancel my account</div>
+        <h4 id="cancel-account-heading" class="text-center">Cancel my account</h4>
         <div class="text-center">
           <p>Unhappy? </p>
-          <%= link_to "Cancel my account", "#", class: "btn btn-danger", data: { bs_toggle: "modal", bs_target: "#cancelConfirmationModal", path: registration_path(resource_name) } %>
+          <%= link_to "Cancel my account", "#", class: "btn btn-danger", data: { bs_toggle: "modal", bs_target: "#cancelConfirmationModal", path: registration_path(resource_name) }, aria: { label: "Cancel my account" } %>
         </div>
         <div class="text-center m-2">
-          <%= link_to "Back", tabs_path %>
+          <%= link_to "Back", tabs_path, aria: { label: "Back to tabs" } %>
         </div>
       </div>
     </div>
