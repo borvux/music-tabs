@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   include Punditable
   skip_forgery_protection
   before_action :authenticate_user!
-  #test comment to test branch protection
 
   protected
 
