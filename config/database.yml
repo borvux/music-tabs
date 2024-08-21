@@ -88,3 +88,7 @@ production:
   database: rails_template_production
   username: rails_template
   password: <%= ENV["RAILS_TEMPLATE_DATABASE_PASSWORD"] %>
+
+
+
+# should rename databases to match the app/repo name on lines 88-89 and maybe line 26

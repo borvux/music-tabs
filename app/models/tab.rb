@@ -18,11 +18,12 @@ class Tab < ApplicationRecord
   has_rich_text :content
 
   scope :by_user, ->(user) { where(user:) }
-  
+
   validates :title, presence: true
   validates :content, presence: true
 
+  # don't need quotes or interpolation for title.capitalize
   def to_s
-    "#{title.capitalize}"
+    title.capitalize
   end
 end
