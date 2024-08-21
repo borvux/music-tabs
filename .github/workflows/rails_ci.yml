@@ -36,6 +36,7 @@ jobs:
       - name: Run tests
         run: bundle exec rails test
 
+  # should remove this linting stuff until it's actually being used
   lint:
     runs-on: ubuntu-latest
     steps:
